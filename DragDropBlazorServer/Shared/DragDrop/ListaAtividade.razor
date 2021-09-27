@@ -1,0 +1,17 @@
+﻿@inherits ListaAtividadeBase
+
+<h5>@Status (@ListaAtividade.Count())</h5>
+
+<ul class="dropzone @dropClass" 
+    ondragover="event.preventDefault()"
+    ondragstart="event.dataTransfer.setData('',event.target.id)"
+    @ondrop="OnDrop"
+    @ondragenter="OnDragEnter"
+    @ondragleave="OnDragLeave">
+
+    @foreach (var atividade in ListaAtividade)
+    {
+        <Atividade AtividadeItem="atividade" />
+    }
+
+</ul>

@@ -1,0 +1,11 @@
+﻿@inherits AtividadeBase
+
+<li class="draggable"
+    draggable="true"
+    title="@AtividadeItem.Descricao"
+    @ondragstart="@(() => OnDragStart(AtividadeItem))">
+
+    <p class="description"> @AtividadeItem.Descricao </p>
+    <p class="last-update"><small>Atualizado em </small> @AtividadeItem.UltimaAtualizacao.ToString("HH:mm:ss tt")</p>
+
+</li>

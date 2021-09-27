@@ -1,0 +1,18 @@
+﻿@page "/Kanban"
+@inherits KanbanBase
+
+<Container ListaAtividade="ListaAtividade" AtualizaStatusAtividade="StatusUpdate">
+    <ListaAtividade Status="Status.Iniciado" StatusPermitidos="@(new Status[] { Status.EmDesenvolvimento})" />
+    <ListaAtividade Status="Status.EmDesenvolvimento" StatusPermitidos="@(new Status[] { Status.Iniciado})" />
+    <ListaAtividade Status="Status.EmTeste" StatusPermitidos="@(new Status[] { Status.EmDesenvolvimento})" />
+    <ListaAtividade Status="Status.Finalizado" StatusPermitidos="@(new Status[] { Status.EmTeste})" />
+</Container>
+
+<hr />
+
+<p>Ultima Atualização <strong>@UltimaAtividadeAtualizada</strong></p>
+
+@foreach (var item in ListaAtividade)
+{
+    <p>@item.Titulo - @item.Descricao - <strong>@item.StatusAtividade</strong></p>
+}
