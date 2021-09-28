@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="currentTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+@Body
+
+@code {
+    bool _drawerOpen = true;
+
+    MudTheme currentTheme = new MudTheme();
+
+    void DrawerToggle() =>
+        _drawerOpen = !_drawerOpen;
+
+    protected override void OnInitialized() =>
+        currentTheme = PaleteColors;
+
+    MudTheme PaleteColors = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            AppbarBackground = "#004647",
+            Tertiary = "#377D7D"
+        }
+    };
+}
