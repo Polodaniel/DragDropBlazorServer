@@ -1,5 +1,5 @@
 ﻿using DragDropBlazorServer.Data;
-using DragDropBlazorServer.Data.Enum;
+using DragDropBlazorServer.Data.Enumeradores;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -12,12 +12,12 @@ namespace DragDropBlazorServer.Shared.DragDrop
     {
         [CascadingParameter]
         public Container Container { get; set; }
-    
+
         [Parameter]
-        public Status Status { get; set; }
-    
+        public StatusAtividade Status { get; set; }
+
         [Parameter]
-        public Status[] StatusPermitidos { get; set; }
+        public StatusAtividade[] StatusPermitidos { get; set; }
 
         public List<ItemAtividade> ListaAtividade { get; set; }
 

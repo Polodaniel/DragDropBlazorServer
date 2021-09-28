@@ -1,0 +1,49 @@
+﻿@inherits NovaAtividadeDialogBase
+
+<MudDialog Class="pt-0 w-dialog">
+    <DialogContent>
+
+        @if (!Equals(NovaAtividade, null))
+        {
+        <MudGrid Spacing="1">
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
+                <MudTextField T="string" 
+                              Counter="25" 
+                              MaxLength="25" 
+                             Placeholder="Descreva o título da atividade..."
+                              Immediate="true" 
+                              Validation="@(new Func<string, IEnumerable<string>>(MaxTituloCharacters))" 
+                              Label="Título"
+                              Variant="Variant.Outlined" 
+                              @bind-Value="@NovaAtividade.Titulo"/>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
+                <MudTextField T="string"
+                              Counter="200"
+                              MaxLength="200"
+                              Placeholder="Descreva uma breve descrição da atividade..."
+                              Immediate="true"
+                              Validation="@(new Func<string, IEnumerable<string>>(MaxDescricaoCharacters))"
+                              Label="Descrição"
+                              Variant="Variant.Outlined"
+                              Lines="5"
+                              @bind-Value="@NovaAtividade.Descricao" />
+
+            </MudItem>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
+                <MudColorPicker Label="Cor" 
+                                @bind-Text="@NovaAtividade.Cor" 
+                                Style="@($"color: {NovaAtividade.Cor};")" 
+                                IconSize="Size.Small"
+                                Placeholder="Selecionar a Cor" />
+
+            </MudItem>
+        </MudGrid>
+        }
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Default" OnClick="Cancel">Cancelar</MudButton>
+        <MudButton Color="Color.Tertiary" Variant="Variant.Filled" OnClick="Submit">Confirmar</MudButton>
+    </DialogActions>
+</MudDialog>

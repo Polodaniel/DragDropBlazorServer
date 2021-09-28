@@ -5,7 +5,12 @@
     title="@AtividadeItem.Descricao"
     @ondragstart="@(() => OnDragStart(AtividadeItem))">
 
-    <p class="description"> @AtividadeItem.Descricao </p>
-    <p class="last-update"><small>Atualizado em </small> @AtividadeItem.UltimaAtualizacao.ToString("HH:mm:ss tt")</p>
+    <MudCard Outlined="true" Style="@AtividadeItem.BordaCard">
+        <MudCardContent>
+            <MudText Typo="Typo.h6" Style="@AtividadeItem.CorTexto">@AtividadeItem.Titulo</MudText>
+            <MudText Typo="Typo.body2">@AtividadeItem.Descricao</MudText>
+            <MudText Typo="Typo.caption">Atualizado em @AtividadeItem.UltimaAtualizacao.ToString("HH:mm:ss tt")</MudText>
+        </MudCardContent>
+    </MudCard>
 
 </li>

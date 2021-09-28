@@ -1,6 +1,5 @@
-﻿
-using DragDropBlazorServer.Data;
-using DragDropBlazorServer.Data.Enum;
+﻿using DragDropBlazorServer.Data;
+using DragDropBlazorServer.Data.Enumeradores;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -22,7 +21,7 @@ namespace DragDropBlazorServer.Shared.DragDrop
 
         public ItemAtividade AtividadeAtual { get; set; }
 
-        public async Task AtualizarAtividadeAsync(Status NovoStatus) 
+        public async Task AtualizarAtividadeAsync(StatusAtividade NovoStatus) 
         {
             var Tarefa = ListaAtividade.SingleOrDefault(x => x.Id == AtividadeAtual.Id);
 

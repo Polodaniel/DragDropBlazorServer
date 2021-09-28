@@ -14,9 +14,10 @@
     }
 
 .dropzone {
-    padding: 30px;
+    padding: 10px;
     border: 1px dashed #75868a;
     list-style: none;
+    height: 100%;
 }
 
 .no-drop {
@@ -28,14 +29,14 @@
 }
 
 .draggable {
+    /*padding: 10px 25px;*/
+    /*border: 1px solid #424d5c;*/
+    /*background: #5c6b7f;*/
+    /*color: #ffffff;*/
     margin-bottom: 10px;
-    padding: 10px 25px;
-    border: 1px solid #424d5c;
-    cursor: grab;
-    background: #5c6b7f;
-    color: #ffffff;
+    cursor: move;
     border-radius: 5px;
-    width: 250px;
+    width: 100%;
 }
 
     .draggable:active {

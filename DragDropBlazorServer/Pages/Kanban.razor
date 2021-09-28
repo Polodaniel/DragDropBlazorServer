@@ -1,18 +1,39 @@
 ﻿@page "/Kanban"
 @inherits KanbanBase
 
-<Container ListaAtividade="ListaAtividade" AtualizaStatusAtividade="StatusUpdate">
-    <ListaAtividade Status="Status.Iniciado" StatusPermitidos="@(new Status[] { Status.EmDesenvolvimento})" />
-    <ListaAtividade Status="Status.EmDesenvolvimento" StatusPermitidos="@(new Status[] { Status.Iniciado})" />
-    <ListaAtividade Status="Status.EmTeste" StatusPermitidos="@(new Status[] { Status.EmDesenvolvimento})" />
-    <ListaAtividade Status="Status.Finalizado" StatusPermitidos="@(new Status[] { Status.EmTeste})" />
-</Container>
+<MudButton Variant="Variant.Filled"
+           StartIcon="@Icons.Material.Rounded.Add"
+           Color="Color.Tertiary"
+           Class="mb-4"
+           OnClick="NovaAtividade">Nova Atividade</MudButton>
 
-<hr />
-
-<p>Ultima Atualização <strong>@UltimaAtividadeAtualizada</strong></p>
-
-@foreach (var item in ListaAtividade)
+@if (!ListaAtividade.IsNullOrEmpty())
 {
-    <p>@item.Titulo - @item.Descricao - <strong>@item.StatusAtividade</strong></p>
+    <Container ListaAtividade="ListaAtividade" AtualizaStatusAtividade="StatusUpdate">
+        <MudItem xs="12" sm="12" md="12" lg="3" xl="3">
+            <ListaAtividade Status="StatusAtividade.Iniciado" StatusPermitidos="@(new StatusAtividade[] { StatusAtividade.EmDesenvolvimento})" />
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12" lg="3" xl="3">
+            <ListaAtividade Status="StatusAtividade.EmDesenvolvimento" StatusPermitidos="@(new StatusAtividade[] { StatusAtividade.Iniciado, StatusAtividade.EmTeste})" />
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12" lg="3" xl="3">
+            <ListaAtividade Status="StatusAtividade.EmTeste" StatusPermitidos="@(new StatusAtividade[] { StatusAtividade.EmDesenvolvimento, StatusAtividade.Finalizado})" />
+        </MudItem>
+        <MudItem xs="12" sm="12" md="12" lg="3" xl="3">
+            <ListaAtividade Status="StatusAtividade.Finalizado" StatusPermitidos="@(new StatusAtividade[] { StatusAtividade.EmTeste})" />
+        </MudItem>
+    </Container>
 }
+else
+{
+    <MudAlert Severity="Severity.Info">Sem nenhum atividade no quadro Kanban.</MudAlert>
+}
+
+@*<hr />
+
+    <p>Ultima Atualização <strong>@UltimaAtividadeAtualizada</strong></p>
+
+    @foreach (var item in ListaAtividade)
+    {
+        <p>@item.Titulo - @item.Descricao - <strong>@item.StatusAtividade</strong></p>
+    }*@

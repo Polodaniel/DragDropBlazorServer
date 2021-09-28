@@ -1,7 +1,13 @@
 ﻿@inherits ContainerBase
 
-<div class="container">
+<MudGrid Spacing="1">
     <CascadingValue Value="this">
         @ChildContent
     </CascadingValue>
-</div>
+</MudGrid>
+
+@*<div class="container">
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</div>*@

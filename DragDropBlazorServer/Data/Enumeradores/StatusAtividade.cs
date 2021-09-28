@@ -4,20 +4,20 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DragDropBlazorServer.Data.Enum
+namespace DragDropBlazorServer.Data.Enumeradores
 {
-    public enum Status
+    public enum StatusAtividade
     {
-        [Description("0 - Iniciado")]
+        [Description("Iniciado")]
         Iniciado = 0,
 
-        [Description("2 - Em Desenvolvimento")]
+        [Description("Em Desenvolvimento")]
         EmDesenvolvimento = 2,
 
-        [Description("4 - Em Teste")]
+        [Description("Em Teste")]
         EmTeste = 4,
 
-        [Description("6 - Finalizado")]
+        [Description("Finalizado")]
         Finalizado = 6
     }
 }

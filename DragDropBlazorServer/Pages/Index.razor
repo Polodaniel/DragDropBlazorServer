@@ -1,7 +1,34 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="12" lg="10" xl="10">
+        <h1>Drag and Drop</h1>
 
-Welcome to your new app.
+        <MudText Typo="Typo.subtitle1" Class="mt-5" Align="Align.Justify">
+            As interfaces de Drag and Drop (arrastar e soltar) habilitam aplicações a usar funcionalidades de arrastar e
+            soltar através do navegador. Por exemplo, com essas funcionalidades, o usuário pode selecionar elementos arrastáveis
+            (draggable) com o mouse, arrastar elementos até um elemento soltável (droppable), e soltar o elemento ao soltar o botão
+            do mouse. Uma representação translúcida de elementos arrastáveis (draggable) seguem o ponteiro do mouse durante a operação
+            de arrastar (drag).
+        </MudText>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        <MudText Typo="Typo.subtitle1" Class="mt-4" Align="Align.Justify">
+            Para web sites, extensões e aplicações XUL, você pode customizar os tipos de elementos que podem se tornar arrastáveis
+            (draggable) e o tipo de retorno que o elemento arrastável produz, assim como os elementos soltáveis (droppable).
+        </MudText>
+
+        <div class="d-flex justify-center">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_dNPIoR.json"
+                           background="transparent"
+                           speed="1"
+                           style="width: 400px; height: 400px;"
+                           loop autoplay></lottie-player>
+
+        </div>
+
+
+    </MudItem>
+    <MudItem xs="12" sm="12" md="12" lg="2" xl="2">
+        
+    </MudItem>
+</MudGrid>

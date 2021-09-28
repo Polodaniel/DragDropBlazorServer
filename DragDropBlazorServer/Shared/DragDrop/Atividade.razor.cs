@@ -19,5 +19,17 @@ namespace DragDropBlazorServer.Shared.DragDrop
         {
             Container.AtividadeAtual = Atividade;
         }
+
+        protected void RemoverAtividade(ItemAtividade Atividade) 
+        {
+           var item = Container.ListaAtividade.Where(x => x.Id == Atividade.Id).FirstOrDefault();
+
+            if (!Equals(item, null)) 
+            {
+                Container.ListaAtividade.Remove(item);
+
+                StateHasChanged();
+            }
+        }
     }
 }
